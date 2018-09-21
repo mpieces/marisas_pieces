@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Marisa's Pieces</h1>
+<% @products.each do |product| %>
+  <div class="entry">
+    <%= image_tag(product.image_url) %>
+    <h3><%= product.maker %> <%= product.title %></h3>
+    <p><%= product.pattern %></p>
+    <p><%= product.color %></p>
+    <p><%= product.dimensions %></p>
+    <p><%= product.yop %></p>
+    <div class="price_line">
+      <span class="price"><%= product.price %></span>
+    </div>
+  </div>
+<% end %>
