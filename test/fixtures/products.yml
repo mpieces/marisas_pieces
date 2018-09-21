@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  image_url: MyString
+  maker: MyString
+  title: MyString
+  pattern: MyString
+  color: MyString
+  dimensions: MyString
+  price: 9.99
+  yop: 1
+
+two:
+  image_url: MyString
+  maker: MyString
+  title: MyString
+  pattern: MyString
+  color: MyString
+  dimensions: MyString
+  price: 9.99
+  yop: 1
