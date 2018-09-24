@@ -1,17 +1,31 @@
 <p id="notice"><%= notice %></p>
+<div class="store-wrapper">
+<div class="container">
+  <div class="row">
+    <% @products.each do |product| %>
+      <div class="col-md-4">
+        <div class="card">
+          <%= image_tag((product.image_url), :class => 'card-img-top') %>
+            <div class="card-body">
+              <div class="card-title">
+                <h3><%= product.maker %> <%= product.title %></h3>
+              </div>
+                <p class="card-text">
+                  <p>Pattern: <%= product.pattern %></p>
+                  <p>Color: <%= product.color %></p>
+                  <p>Dimensions: <%= product.dimensions %></p>
+                  <p>YOP: <%= product.yop %></p>
+                  <div class="price_line">
+                    <span class="price"><%= number_to_currency(product.price) %></span>
+                    <%= button_to 'Add to Cart', line_items_path(product_id: product), remote: true, :class => "btn" %>
+                  </div>
+                </p>
+              </div>
+            </div>
+          </div>
 
-<h1>Marisa's Pieces</h1>
-<% @products.each do |product| %>
-  <div class="entry">
-    <%= image_tag(product.image_url) %>
-    <h3><%= product.maker %> <%= product.title %></h3>
-    <p><%= product.pattern %></p>
-    <p><%= product.color %></p>
-    <p><%= product.dimensions %></p>
-    <p><%= product.yop %></p>
-    <div class="price_line">
-      <span class="price"><%= number_to_currency(product.price) %></span>
-      <%= button_to 'Add to Cart', line_items_path(product_id: product), remote: true %>
-    </div>
-  </div>
 <% end %>
+
+  </div>
+</div>
+</div>
